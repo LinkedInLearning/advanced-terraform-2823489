@@ -1,0 +1,25 @@
+export AWS_PAGER=""
+
+--ALL INSTANCES--
+    aws ec2 describe-instances \
+    --filters Name=tag-key,Values=Name \
+    --query 'Reservations[*].Instances[*].{Instance:InstanceId,AZ:Placement.AvailabilityZone,Name:Tags[?Key==`Name`]|[0].Value,Environment:Tags[?Key==`environment`]|[0].Value}' \
+    --output table
+
+--DEV INSTANCES--
+    aws ec2 describe-instances \
+    --filters Name=tag:environment,Values=development \
+    --query 'Reservations[*].Instances[*].{Instance:InstanceId,AZ:Placement.AvailabilityZone,Name:Tags[?Key==`Name`]|[0].Value,Environment:Tags[?Key==`environment`]|[0].Value}' \
+    --output table
+
+--QA INSTANCES--
+    aws ec2 describe-instances \
+    --filters Name=tag:environment,Values=qa \
+    --query 'Reservations[*].Instances[*].{Instance:InstanceId,AZ:Placement.AvailabilityZone,Name:Tags[?Key==`Name`]|[0].Value,Environment:Tags[?Key==`environment`]|[0].Value}' \
+    --output table
+
+--PRODUCTION INSTANCES--
+    aws ec2 describe-instances \
+    --filters Name=tag:environment,Values=production \
+    --query 'Reservations[*].Instances[*].{Instance:InstanceId,AZ:Placement.AvailabilityZone,Name:Tags[?Key==`Name`]|[0].Value,Environment:Tags[?Key==`environment`]|[0].Value}' \
+    --output table
