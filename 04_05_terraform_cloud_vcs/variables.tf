@@ -14,6 +14,12 @@ variable "instance_count" {
   default = 1
 }
 
+variable "instance_tags" {
+    type = map
+    default = {
+      "environment" = "dev"
+    }
+}
 # //////////////////////////////
 # OUTPUT
 # //////////////////////////////
