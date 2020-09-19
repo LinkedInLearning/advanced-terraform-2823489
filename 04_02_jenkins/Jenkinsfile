@@ -2,7 +2,7 @@ node {
     stage('Clone') { // for display purposes
         // Clone the configurations repository
         cleanWs()
-        git 'https://github.com/dswersky/advanced_terraform.git'   
+        git 'https://github.com/LinkedInLearning/advanced-terraform-2823489.git'   
     }
     stage('Download') {
         // Download Terraform
