@@ -41,50 +41,20 @@ provider "aws" {
 resource "aws_vpc" "vpc1" {
   cidr_block = var.vpc_cidr
   enable_dns_hostnames = "true"
-    tags = {
-    Name = "tf-vpc"
-  }
 }
 
-
 # SUBNET
-resource "aws_subnet" "public_subnet1" {
+resource "aws_subnet" "subnet1" {
   cidr_block = var.subnet1_cidr
   vpc_id = aws_vpc.vpc1.id
   map_public_ip_on_launch = "true"
   availability_zone = data.aws_availability_zones.available.names[1]
-    tags = {
-    Name = "public-subnet-1"
-  }
-}
-resource "aws_subnet" "private_subnet1" {
-  cidr_block = var.subnet2_cidr
-  vpc_id = aws_vpc.vpc1.id
-  map_public_ip_on_launch = "false"
-  availability_zone = data.aws_availability_zones.available.names[1]
-  tags = {
-    Name = "private-subnet-1"
-  }
-}
 
-resource "aws_eip" "nat" {
-  vpc                       = true
-    depends_on = [
-    aws_route_table_association.route-subnet1
-  ]
 }
 
 # INTERNET_GATEWAY
 resource "aws_internet_gateway" "gateway1" {
   vpc_id = aws_vpc.vpc1.id
-}
-
-resource "aws_nat_gateway" "nat_gw" {
-    depends_on = [
-    aws_eip.nat
-  ]
-  allocation_id = aws_eip.nat.id
-  subnet_id     = aws_subnet.public_subnet1.id
 }
 
 # ROUTE_TABLE
@@ -95,28 +65,12 @@ resource "aws_route_table" "route_table1" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.gateway1.id
   }
-
 }
-resource "aws_route_table" "route_table2" {
-  vpc_id = aws_vpc.vpc1.id
-
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id =aws_nat_gateway.nat_gw.id
-  }
-
-}
-
 
 resource "aws_route_table_association" "route-subnet1" {
-  subnet_id = aws_subnet.public_subnet1.id
+  subnet_id = aws_subnet.subnet1.id
   route_table_id = aws_route_table.route_table1.id
 }
-resource "aws_route_table_association" "route-subnet2" {
-  subnet_id = aws_subnet.private_subnet1.id
-  route_table_id = aws_route_table.route_table2.id
-}
-
 
 # SECURITY_GROUP
 resource "aws_security_group" "sg-nodejs-instance" {
@@ -156,7 +110,7 @@ resource "aws_security_group" "sg-nodejs-instance" {
 resource "aws_instance" "nodejs1" {
   ami = data.aws_ami.aws-linux.id
   instance_type = "t2.micro"
-  subnet_id = aws_subnet.public_subnet1.id
+  subnet_id = aws_subnet.subnet1.id
   vpc_security_group_ids = [aws_security_group.sg-nodejs-instance.id]
   key_name               = var.ssh_key_name
 
@@ -172,12 +126,10 @@ resource "aws_instance" "nodejs1" {
 # //////////////////////////////
 # DATA
 # //////////////////////////////
-//allow query of configuration data
 data "aws_availability_zones" "available" {
   state = "available"
 }
 
-//gets a list of amis
 data "aws_ami" "aws-linux" {
   most_recent = true
   owners      = ["amazon"]
@@ -202,6 +154,5 @@ data "aws_ami" "aws-linux" {
 # OUTPUT
 # //////////////////////////////
 output "instance-dns" {
-  //dns name of the instance returned by the aws
   value = aws_instance.nodejs1.public_dns
 }
