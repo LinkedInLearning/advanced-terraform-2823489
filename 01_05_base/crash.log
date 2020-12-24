@@ -1,0 +1,1408 @@
+2020/12/24 11:43:31 [INFO] Terraform version: 0.14.3  
+2020/12/24 11:43:31 [INFO] Go runtime version: go1.15.2
+2020/12/24 11:43:31 [INFO] CLI args: []string{"/usr/local/bin/terraform", "apply", "s1.tfplan"}
+2020/12/24 11:43:31 [DEBUG] Attempting to open CLI config file: /Users/yangyuncheng/.terraformrc
+2020/12/24 11:43:31 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2020/12/24 11:43:31 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2020/12/24 11:43:31 [DEBUG] ignoring non-existing provider search directory /Users/yangyuncheng/.terraform.d/plugins
+2020/12/24 11:43:31 [DEBUG] ignoring non-existing provider search directory /Users/yangyuncheng/Library/Application Support/io.terraform/plugins
+2020/12/24 11:43:31 [DEBUG] ignoring non-existing provider search directory /Library/Application Support/io.terraform/plugins
+2020/12/24 11:43:31 [INFO] CLI command args: []string{"apply", "s1.tfplan"}
+2020/12/24 11:43:31 [TRACE] Meta.BackendForPlan: instantiated backend of type *local.Local
+2020/12/24 11:43:31 [TRACE] providercache.fillMetaCache: scanning directory .terraform/providers
+2020/12/24 11:43:31 [TRACE] getproviders.SearchLocalDirectory: .terraform/providers is a symlink to .terraform/providers
+2020/12/24 11:43:31 [TRACE] getproviders.SearchLocalDirectory: found registry.terraform.io/hashicorp/aws v3.22.0 for darwin_amd64 at .terraform/providers/registry.terraform.io/hashicorp/aws/3.22.0/darwin_amd64
+2020/12/24 11:43:31 [TRACE] providercache.fillMetaCache: including .terraform/providers/registry.terraform.io/hashicorp/aws/3.22.0/darwin_amd64 as a candidate package for registry.terraform.io/hashicorp/aws 3.22.0
+2020/12/24 11:43:32 [DEBUG] checking for provisioner in "."
+2020/12/24 11:43:32 [DEBUG] checking for provisioner in "/usr/local/bin"
+2020/12/24 11:43:32 [INFO] Failed to read plugin lock file .terraform/plugins/darwin_amd64/lock.json: open .terraform/plugins/darwin_amd64/lock.json: no such file or directory
+2020/12/24 11:43:32 [TRACE] Meta.BackendForPlan: backend *local.Local supports operations
+2020/12/24 11:43:32 [INFO] backend/local: starting Apply operation
+2020/12/24 11:43:32 [TRACE] backend/local: requesting state manager for workspace "default"
+2020/12/24 11:43:32 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2020/12/24 11:43:32 [TRACE] backend/local: requesting state lock for workspace "default"
+2020/12/24 11:43:32 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2020/12/24 11:43:32 [TRACE] statemgr.Filesystem: existing snapshot has lineage "7963b896-b65e-9898-2d0b-97e1381d2def" serial 9
+2020/12/24 11:43:32 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2020/12/24 11:43:32 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2020/12/24 11:43:32 [TRACE] backend/local: reading remote state for workspace "default"
+2020/12/24 11:43:32 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2020/12/24 11:43:32 [TRACE] statemgr.Filesystem: read snapshot with lineage "7963b896-b65e-9898-2d0b-97e1381d2def" serial 9
+2020/12/24 11:43:32 [TRACE] backend/local: retrieving local state snapshot for workspace "default"
+2020/12/24 11:43:32 [TRACE] backend/local: building context from plan file
+2020/12/24 11:43:32 [TRACE] terraform.NewContext: starting
+2020/12/24 11:43:32 [TRACE] terraform.NewContext: loading provider schemas
+2020/12/24 11:43:32 [TRACE] LoadSchemas: retrieving schema for provider type "registry.terraform.io/hashicorp/aws"
+2020-12-24T11:43:32.046+1100 [INFO]  plugin: configuring client automatic mTLS
+2020-12-24T11:43:32.076+1100 [DEBUG] plugin: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/aws/3.22.0/darwin_amd64/terraform-provider-aws_v3.22.0_x5 args=[.terraform/providers/registry.terraform.io/hashicorp/aws/3.22.0/darwin_amd64/terraform-provider-aws_v3.22.0_x5]
+2020-12-24T11:43:32.089+1100 [DEBUG] plugin: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/aws/3.22.0/darwin_amd64/terraform-provider-aws_v3.22.0_x5 pid=12016
+2020-12-24T11:43:32.089+1100 [DEBUG] plugin: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/aws/3.22.0/darwin_amd64/terraform-provider-aws_v3.22.0_x5
+2020-12-24T11:43:32.126+1100 [INFO]  plugin.terraform-provider-aws_v3.22.0_x5: configuring server automatic mTLS: timestamp=2020-12-24T11:43:32.126+1100
+2020-12-24T11:43:32.155+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: plugin address: address=/var/folders/04/5p5mg0ys1816j1wb7bprllz80000gn/T/plugin100842935 network=unix timestamp=2020-12-24T11:43:32.154+1100
+2020-12-24T11:43:32.155+1100 [DEBUG] plugin: using plugin: version=5
+2020/12/24 11:43:32 [TRACE] GRPCProvider: GetSchema
+2020-12-24T11:43:32.205+1100 [TRACE] plugin.stdio: waiting for stdio data
+2020/12/24 11:43:32 [TRACE] GRPCProvider: Close
+2020-12-24T11:43:32.277+1100 [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = transport is closing"
+2020-12-24T11:43:32.281+1100 [DEBUG] plugin: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/aws/3.22.0/darwin_amd64/terraform-provider-aws_v3.22.0_x5 pid=12016
+2020-12-24T11:43:32.281+1100 [DEBUG] plugin: plugin exited
+2020/12/24 11:43:32 [TRACE] terraform.NewContext: complete
+2020/12/24 11:43:32 [TRACE] backend/local: finished building terraform.Context
+2020/12/24 11:43:32 [INFO] backend/local: apply calling Apply
+2020/12/24 11:43:32 [INFO] terraform: building graph: GraphTypeApply
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2020/12/24 11:43:32 [TRACE] ConfigTransformer: Starting for path: 
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+  aws_instance.nodejs1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_internet_gateway.gateway1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_security_group.sg-nodejs-instance (expand) - *terraform.nodeExpandApplyableResource
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+  data.aws_ami.aws-linux (expand) - *terraform.nodeExpandApplyableResource
+  data.aws_availability_zones.available (expand) - *terraform.nodeExpandApplyableResource
+  ------
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.RootVariableTransformer with new graph:
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+  aws_instance.nodejs1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_internet_gateway.gateway1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_security_group.sg-nodejs-instance (expand) - *terraform.nodeExpandApplyableResource
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+  data.aws_ami.aws-linux (expand) - *terraform.nodeExpandApplyableResource
+  data.aws_availability_zones.available (expand) - *terraform.nodeExpandApplyableResource
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.private_key_path - *terraform.NodeRootVariable
+  var.region - *terraform.NodeRootVariable
+  var.ssh_key_name - *terraform.NodeRootVariable
+  var.subnet1_cidr - *terraform.NodeRootVariable
+  var.subnet2_cidr - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  ------
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.LocalTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.OutputTransformer
+2020/12/24 11:43:32 [TRACE] OutputTransformer: adding instance-dns as *terraform.NodeApplyableOutput
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.OutputTransformer with new graph:
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+  aws_instance.nodejs1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_internet_gateway.gateway1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_security_group.sg-nodejs-instance (expand) - *terraform.nodeExpandApplyableResource
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+  data.aws_ami.aws-linux (expand) - *terraform.nodeExpandApplyableResource
+  data.aws_availability_zones.available (expand) - *terraform.nodeExpandApplyableResource
+  output.instance-dns - *terraform.NodeApplyableOutput
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.private_key_path - *terraform.NodeRootVariable
+  var.region - *terraform.NodeRootVariable
+  var.ssh_key_name - *terraform.NodeRootVariable
+  var.subnet1_cidr - *terraform.NodeRootVariable
+  var.subnet2_cidr - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  ------
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.DiffTransformer
+2020/12/24 11:43:32 [TRACE] DiffTransformer starting
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found NoOp change for aws_vpc.vpc1 
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found NoOp change for aws_internet_gateway.gateway1 
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found NoOp change for aws_security_group.sg-nodejs-instance 
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found NoOp change for aws_subnet.public_subnet1 
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found Create change for aws_network_interface.multi-ip 
+2020/12/24 11:43:32 [TRACE] DiffTransformer: aws_network_interface.multi-ip will be represented by aws_network_interface.multi-ip
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found Create change for aws_eip.nat 
+2020/12/24 11:43:32 [TRACE] DiffTransformer: aws_eip.nat will be represented by aws_eip.nat
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found NoOp change for aws_subnet.private_subnet1 
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found Create change for aws_nat_gateway.nat_gw 
+2020/12/24 11:43:32 [TRACE] DiffTransformer: aws_nat_gateway.nat_gw will be represented by aws_nat_gateway.nat_gw
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found Create change for aws_route_table.route_table2 
+2020/12/24 11:43:32 [TRACE] DiffTransformer: aws_route_table.route_table2 will be represented by aws_route_table.route_table2
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found Create change for aws_route_table_association.route-subnet2 
+2020/12/24 11:43:32 [TRACE] DiffTransformer: aws_route_table_association.route-subnet2 will be represented by aws_route_table_association.route-subnet2
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found NoOp change for aws_route_table.route_table1 
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found NoOp change for aws_route_table_association.route-subnet1 
+2020/12/24 11:43:32 [TRACE] DiffTransformer: found NoOp change for aws_instance.nodejs1 
+2020/12/24 11:43:32 [TRACE] DiffTransformer complete
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.DiffTransformer with new graph:
+  aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+  aws_instance.nodejs1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_internet_gateway.gateway1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+  aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_security_group.sg-nodejs-instance (expand) - *terraform.nodeExpandApplyableResource
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+  data.aws_ami.aws-linux (expand) - *terraform.nodeExpandApplyableResource
+  data.aws_availability_zones.available (expand) - *terraform.nodeExpandApplyableResource
+  output.instance-dns - *terraform.NodeApplyableOutput
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.private_key_path - *terraform.NodeRootVariable
+  var.region - *terraform.NodeRootVariable
+  var.ssh_key_name - *terraform.NodeRootVariable
+  var.subnet1_cidr - *terraform.NodeRootVariable
+  var.subnet2_cidr - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  ------
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2020/12/24 11:43:32 [DEBUG] Resource state not found for node "aws_route_table_association.route-subnet2", instance aws_route_table_association.route-subnet2
+2020/12/24 11:43:32 [DEBUG] Resource state not found for node "aws_nat_gateway.nat_gw", instance aws_nat_gateway.nat_gw
+2020/12/24 11:43:32 [DEBUG] Resource state not found for node "aws_network_interface.multi-ip", instance aws_network_interface.multi-ip
+2020/12/24 11:43:32 [DEBUG] Resource state not found for node "aws_eip.nat", instance aws_eip.nat
+2020/12/24 11:43:32 [DEBUG] Resource state not found for node "aws_route_table.route_table2", instance aws_route_table.route_table2
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_vpc.vpc1 (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:41,1-26
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_vpc.vpc1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_subnet.private_subnet1 (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:57,1-40
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_subnet.private_subnet1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_network_interface.multi-ip (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:66,1-44
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_network_interface.multi-ip (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_eip.nat (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:71,1-25
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_eip.nat (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_route_table_association.route-subnet2 (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:112,1-55
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_route_table_association.route-subnet2 (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_security_group.sg-nodejs-instance (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:119,1-51
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_security_group.sg-nodejs-instance (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_subnet.public_subnet1 (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:48,1-39
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_subnet.public_subnet1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_route_table.route_table2 (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:97,1-42
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_route_table.route_table2 (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_nat_gateway.nat_gw" (*terraform.NodeApplyableResourceInstance) config from main.tf:82,1-36
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_nat_gateway.nat_gw
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_instance.nodejs1 (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:153,1-34
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_instance.nodejs1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_internet_gateway.gateway1 (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:78,1-43
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_internet_gateway.gateway1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_network_interface.multi-ip" (*terraform.NodeApplyableResourceInstance) config from main.tf:66,1-44
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_network_interface.multi-ip
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_eip.nat" (*terraform.NodeApplyableResourceInstance) config from main.tf:71,1-25
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_eip.nat
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_route_table.route_table2" (*terraform.NodeApplyableResourceInstance) config from main.tf:97,1-42
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_route_table.route_table2
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_route_table.route_table1 (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:88,1-42
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_route_table.route_table1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "data.aws_ami.aws-linux (expand)" (*terraform.nodeExpandApplyableResource) config from hcl.Range{Filename:"main.tf", Start:hcl.Pos{Line:178, Column:1, Byte:3645}, End:hcl.Pos{Line:178, Column:27, Byte:3671}}
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to data.aws_ami.aws-linux (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "data.aws_availability_zones.available (expand)" (*terraform.nodeExpandApplyableResource) config from hcl.Range{Filename:"main.tf", Start:hcl.Pos{Line:173, Column:1, Byte:3554}, End:hcl.Pos{Line:173, Column:42, Byte:3595}}
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to data.aws_availability_zones.available (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_nat_gateway.nat_gw (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:82,1-36
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_nat_gateway.nat_gw (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_route_table_association.route-subnet1 (expand)" (*terraform.nodeExpandApplyableResource) config from main.tf:108,1-55
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_route_table_association.route-subnet1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching to "aws_route_table_association.route-subnet2" (*terraform.NodeApplyableResourceInstance) config from main.tf:112,1-55
+2020/12/24 11:43:32 [TRACE] AttachResourceConfigTransformer: attaching provider meta configs to aws_route_table_association.route-subnet2
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2020/12/24 11:43:32 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2020/12/24 11:43:32 [TRACE] ProviderConfigTransformer: attaching to "provider[\"registry.terraform.io/hashicorp/aws\"]" provider configuration from main.tf:30,1-15
+2020/12/24 11:43:32 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+  aws_instance.nodejs1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_internet_gateway.gateway1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+  aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+  aws_security_group.sg-nodejs-instance (expand) - *terraform.nodeExpandApplyableResource
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+  data.aws_ami.aws-linux (expand) - *terraform.nodeExpandApplyableResource
+  data.aws_availability_zones.available (expand) - *terraform.nodeExpandApplyableResource
+  output.instance-dns - *terraform.NodeApplyableOutput
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.private_key_path - *terraform.NodeRootVariable
+  var.region - *terraform.NodeRootVariable
+  var.ssh_key_name - *terraform.NodeRootVariable
+  var.subnet1_cidr - *terraform.NodeRootVariable
+  var.subnet2_cidr - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  ------
+2020/12/24 11:43:32 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2020/12/24 11:43:32 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_eip.nat (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_eip.nat (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_route_table_association.route-subnet2 (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_route_table_association.route-subnet2 (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_route_table.route_table1 (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_route_table.route_table1 (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_vpc.vpc1 (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_vpc.vpc1 (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_security_group.sg-nodejs-instance (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_security_group.sg-nodejs-instance (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_eip.nat
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_eip.nat" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving data.aws_ami.aws-linux (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "data.aws_ami.aws-linux (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_nat_gateway.nat_gw (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_nat_gateway.nat_gw (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_nat_gateway.nat_gw
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_nat_gateway.nat_gw" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_network_interface.multi-ip
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_network_interface.multi-ip" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_route_table_association.route-subnet2
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_route_table_association.route-subnet2" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_network_interface.multi-ip (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_network_interface.multi-ip (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_internet_gateway.gateway1 (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_internet_gateway.gateway1 (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving data.aws_availability_zones.available (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "data.aws_availability_zones.available (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_route_table_association.route-subnet1 (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_route_table_association.route-subnet1 (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_subnet.private_subnet1 (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_subnet.private_subnet1 (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_subnet.public_subnet1 (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_subnet.public_subnet1 (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_route_table.route_table2 (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_route_table.route_table2 (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_route_table.route_table2
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_route_table.route_table2" (*terraform.NodeApplyableResourceInstance) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] ProviderTransformer: exact match for provider["registry.terraform.io/hashicorp/aws"] serving aws_instance.nodejs1 (expand)
+2020/12/24 11:43:32 [DEBUG] ProviderTransformer: "aws_instance.nodejs1 (expand)" (*terraform.nodeExpandApplyableResource) needs provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+  aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_instance.nodejs1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_internet_gateway.gateway1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_security_group.sg-nodejs-instance (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  data.aws_ami.aws-linux (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  data.aws_availability_zones.available (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  output.instance-dns - *terraform.NodeApplyableOutput
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.private_key_path - *terraform.NodeRootVariable
+  var.region - *terraform.NodeRootVariable
+  var.ssh_key_name - *terraform.NodeRootVariable
+  var.subnet1_cidr - *terraform.NodeRootVariable
+  var.subnet2_cidr - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  ------
+2020/12/24 11:43:32 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2020/12/24 11:43:32 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2020/12/24 11:43:32 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+  aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_instance.nodejs1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_internet_gateway.gateway1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_security_group.sg-nodejs-instance (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  data.aws_ami.aws-linux (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  data.aws_availability_zones.available (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  output.instance-dns - *terraform.NodeApplyableOutput
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.private_key_path - *terraform.NodeRootVariable
+  var.region - *terraform.NodeRootVariable
+  var.ssh_key_name - *terraform.NodeRootVariable
+  var.subnet1_cidr - *terraform.NodeRootVariable
+  var.subnet2_cidr - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  ------
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_security_group.sg-nodejs-instance (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_subnet.public_subnet1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_route_table.route_table2 (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_nat_gateway.nat_gw
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_eip.nat
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_route_table.route_table2
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_instance.nodejs1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_internet_gateway.gateway1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_network_interface.multi-ip
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_route_table.route_table1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to data.aws_ami.aws-linux (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to data.aws_availability_zones.available (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_nat_gateway.nat_gw (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_route_table_association.route-subnet1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_route_table_association.route-subnet2
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_vpc.vpc1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_subnet.private_subnet1 (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_network_interface.multi-ip (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider["registry.terraform.io/hashicorp/aws"]
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_eip.nat (expand)
+2020/12/24 11:43:32 [TRACE] AttachSchemaTransformer: attaching resource schema to aws_route_table_association.route-subnet2 (expand)
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.ModuleExpansionTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_eip.nat (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_route_table_association.route-subnet2 (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "var.ssh_key_name" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "var.subnet2_cidr" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/hashicorp/aws\"]" references: [var.aws_secret_key var.region var.aws_access_key]
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_security_group.sg-nodejs-instance (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_subnet.public_subnet1 (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "var.vpc_cidr" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "var.subnet1_cidr" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_route_table.route_table2 (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_nat_gateway.nat_gw" references: [aws_eip.nat (expand) aws_eip.nat aws_eip.nat aws_subnet.public_subnet1 (expand)]
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_instance.nodejs1 (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_internet_gateway.gateway1 (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_network_interface.multi-ip" references: [aws_subnet.public_subnet1 (expand)]
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_eip.nat" references: [aws_network_interface.multi-ip aws_network_interface.multi-ip aws_network_interface.multi-ip (expand)]
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_route_table.route_table2" references: [aws_vpc.vpc1 (expand) aws_nat_gateway.nat_gw aws_nat_gateway.nat_gw aws_nat_gateway.nat_gw (expand)]
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_route_table.route_table1 (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "data.aws_ami.aws-linux (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "var.private_key_path" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "output.instance-dns" references: [aws_instance.nodejs1 (expand)]
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "data.aws_availability_zones.available (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "var.aws_access_key" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "var.aws_secret_key" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "var.region" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_nat_gateway.nat_gw (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_route_table_association.route-subnet1 (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_route_table_association.route-subnet2" references: [aws_route_table.route_table2 (expand) aws_route_table.route_table2 aws_route_table.route_table2 aws_subnet.private_subnet1 (expand)]
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_vpc.vpc1 (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_subnet.private_subnet1 (expand)" references: []
+2020/12/24 11:43:32 [DEBUG] ReferenceTransformer: "aws_network_interface.multi-ip (expand)" references: []
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+  aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_instance.nodejs1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_internet_gateway.gateway1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_security_group.sg-nodejs-instance (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  data.aws_ami.aws-linux (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  data.aws_availability_zones.available (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  output.instance-dns - *terraform.NodeApplyableOutput
+    aws_instance.nodejs1 (expand) - *terraform.nodeExpandApplyableResource
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+    var.region - *terraform.NodeRootVariable
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.private_key_path - *terraform.NodeRootVariable
+  var.region - *terraform.NodeRootVariable
+  var.ssh_key_name - *terraform.NodeRootVariable
+  var.subnet1_cidr - *terraform.NodeRootVariable
+  var.subnet2_cidr - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  ------
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2020/12/24 11:43:32 [TRACE] AttachDependenciesTransformer: aws_route_table_association.route-subnet2 depends on [aws_eip.nat aws_nat_gateway.nat_gw aws_network_interface.multi-ip aws_route_table.route_table2 aws_subnet.private_subnet1 aws_subnet.public_subnet1 aws_vpc.vpc1]
+2020/12/24 11:43:32 [TRACE] AttachDependenciesTransformer: aws_nat_gateway.nat_gw depends on [aws_eip.nat aws_network_interface.multi-ip aws_subnet.public_subnet1]
+2020/12/24 11:43:32 [TRACE] AttachDependenciesTransformer: aws_network_interface.multi-ip depends on [aws_subnet.public_subnet1]
+2020/12/24 11:43:32 [TRACE] AttachDependenciesTransformer: aws_eip.nat depends on [aws_network_interface.multi-ip aws_subnet.public_subnet1]
+2020/12/24 11:43:32 [TRACE] AttachDependenciesTransformer: aws_route_table.route_table2 depends on [aws_eip.nat aws_nat_gateway.nat_gw aws_network_interface.multi-ip aws_subnet.public_subnet1 aws_vpc.vpc1]
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.AttachDependenciesTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2020/12/24 11:43:32 [TRACE] ForcedCBDTransformer: "aws_network_interface.multi-ip" (*terraform.NodeApplyableResourceInstance) has no CBD descendent, so skipping
+2020/12/24 11:43:32 [TRACE] ForcedCBDTransformer: "aws_eip.nat" (*terraform.NodeApplyableResourceInstance) has no CBD descendent, so skipping
+2020/12/24 11:43:32 [TRACE] ForcedCBDTransformer: "aws_route_table.route_table2" (*terraform.NodeApplyableResourceInstance) has no CBD descendent, so skipping
+2020/12/24 11:43:32 [TRACE] ForcedCBDTransformer: "aws_route_table_association.route-subnet2" (*terraform.NodeApplyableResourceInstance) has no CBD descendent, so skipping
+2020/12/24 11:43:32 [TRACE] ForcedCBDTransformer: "aws_nat_gateway.nat_gw" (*terraform.NodeApplyableResourceInstance) has no CBD descendent, so skipping
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.DestroyEdgeTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.DestroyEdgeTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.CBDEdgeTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.CBDEdgeTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.pruneUnusedNodesTransformer
+2020/12/24 11:43:32 [DEBUG] pruneUnusedNodes: aws_route_table_association.route-subnet1 (expand) is no longer needed, removing
+2020/12/24 11:43:32 [DEBUG] pruneUnusedNodes: aws_security_group.sg-nodejs-instance (expand) is no longer needed, removing
+2020/12/24 11:43:32 [DEBUG] pruneUnusedNodes: aws_instance.nodejs1 (expand) is no longer needed, removing
+2020/12/24 11:43:32 [DEBUG] pruneUnusedNodes: aws_internet_gateway.gateway1 (expand) is no longer needed, removing
+2020/12/24 11:43:32 [DEBUG] pruneUnusedNodes: aws_route_table.route_table1 (expand) is no longer needed, removing
+2020/12/24 11:43:32 [DEBUG] pruneUnusedNodes: data.aws_ami.aws-linux (expand) is no longer needed, removing
+2020/12/24 11:43:32 [DEBUG] pruneUnusedNodes: data.aws_availability_zones.available (expand) is no longer needed, removing
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.pruneUnusedNodesTransformer with new graph:
+  aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  output.instance-dns - *terraform.NodeApplyableOutput
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+    var.region - *terraform.NodeRootVariable
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.private_key_path - *terraform.NodeRootVariable
+  var.region - *terraform.NodeRootVariable
+  var.ssh_key_name - *terraform.NodeRootVariable
+  var.subnet1_cidr - *terraform.NodeRootVariable
+  var.subnet2_cidr - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  ------
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+  aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    output.instance-dns - *terraform.NodeApplyableOutput
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+    var.private_key_path - *terraform.NodeRootVariable
+    var.region - *terraform.NodeRootVariable
+    var.ssh_key_name - *terraform.NodeRootVariable
+    var.subnet1_cidr - *terraform.NodeRootVariable
+    var.subnet2_cidr - *terraform.NodeRootVariable
+    var.vpc_cidr - *terraform.NodeRootVariable
+  output.instance-dns - *terraform.NodeApplyableOutput
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+    var.region - *terraform.NodeRootVariable
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.private_key_path - *terraform.NodeRootVariable
+  var.region - *terraform.NodeRootVariable
+  var.ssh_key_name - *terraform.NodeRootVariable
+  var.subnet1_cidr - *terraform.NodeRootVariable
+  var.subnet2_cidr - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  ------
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+  aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    output.instance-dns - *terraform.NodeApplyableOutput
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+    var.private_key_path - *terraform.NodeRootVariable
+    var.region - *terraform.NodeRootVariable
+    var.ssh_key_name - *terraform.NodeRootVariable
+    var.subnet1_cidr - *terraform.NodeRootVariable
+    var.subnet2_cidr - *terraform.NodeRootVariable
+    var.vpc_cidr - *terraform.NodeRootVariable
+  output.instance-dns - *terraform.NodeApplyableOutput
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+    var.region - *terraform.NodeRootVariable
+  provider["registry.terraform.io/hashicorp/aws"] (close) - *terraform.graphNodeCloseProvider
+    aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.private_key_path - *terraform.NodeRootVariable
+  var.region - *terraform.NodeRootVariable
+  var.ssh_key_name - *terraform.NodeRootVariable
+  var.subnet1_cidr - *terraform.NodeRootVariable
+  var.subnet2_cidr - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  ------
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.CloseRootModuleTransformer with new graph:
+  aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    output.instance-dns - *terraform.NodeApplyableOutput
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+    var.private_key_path - *terraform.NodeRootVariable
+    var.region - *terraform.NodeRootVariable
+    var.ssh_key_name - *terraform.NodeRootVariable
+    var.subnet1_cidr - *terraform.NodeRootVariable
+    var.subnet2_cidr - *terraform.NodeRootVariable
+    var.vpc_cidr - *terraform.NodeRootVariable
+  output.instance-dns - *terraform.NodeApplyableOutput
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+    var.region - *terraform.NodeRootVariable
+  provider["registry.terraform.io/hashicorp/aws"] (close) - *terraform.graphNodeCloseProvider
+    aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider["registry.terraform.io/hashicorp/aws"] (close) - *terraform.graphNodeCloseProvider
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.private_key_path - *terraform.NodeRootVariable
+  var.region - *terraform.NodeRootVariable
+  var.ssh_key_name - *terraform.NodeRootVariable
+  var.subnet1_cidr - *terraform.NodeRootVariable
+  var.subnet2_cidr - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  ------
+2020/12/24 11:43:32 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2020/12/24 11:43:32 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+  aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+  aws_eip.nat (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_eip.nat - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+  aws_nat_gateway.nat_gw (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_network_interface.multi-ip - *terraform.NodeApplyableResourceInstance
+    aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_network_interface.multi-ip (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_nat_gateway.nat_gw - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table.route_table2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table.route_table2 - *terraform.NodeApplyableResourceInstance
+    aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+  aws_route_table_association.route-subnet2 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.private_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_subnet.public_subnet1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  aws_vpc.vpc1 (expand) - *terraform.nodeExpandApplyableResource
+    provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+    output.instance-dns - *terraform.NodeApplyableOutput
+    var.private_key_path - *terraform.NodeRootVariable
+    var.ssh_key_name - *terraform.NodeRootVariable
+    var.subnet1_cidr - *terraform.NodeRootVariable
+    var.subnet2_cidr - *terraform.NodeRootVariable
+    var.vpc_cidr - *terraform.NodeRootVariable
+  output.instance-dns - *terraform.NodeApplyableOutput
+  provider["registry.terraform.io/hashicorp/aws"] - *terraform.NodeApplyableProvider
+    var.aws_access_key - *terraform.NodeRootVariable
+    var.aws_secret_key - *terraform.NodeRootVariable
+    var.region - *terraform.NodeRootVariable
+  provider["registry.terraform.io/hashicorp/aws"] (close) - *terraform.graphNodeCloseProvider
+    aws_route_table_association.route-subnet2 - *terraform.NodeApplyableResourceInstance
+  root - *terraform.nodeCloseModule
+    meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+    provider["registry.terraform.io/hashicorp/aws"] (close) - *terraform.graphNodeCloseProvider
+  var.aws_access_key - *terraform.NodeRootVariable
+  var.aws_secret_key - *terraform.NodeRootVariable
+  var.private_key_path - *terraform.NodeRootVariable
+  var.region - *terraform.NodeRootVariable
+  var.ssh_key_name - *terraform.NodeRootVariable
+  var.subnet1_cidr - *terraform.NodeRootVariable
+  var.subnet2_cidr - *terraform.NodeRootVariable
+  var.vpc_cidr - *terraform.NodeRootVariable
+  ------
+2020/12/24 11:43:32 [DEBUG] Starting graph walk: walkApply
+2020/12/24 11:43:32 [TRACE] dag/walk: visiting "var.ssh_key_name"
+2020/12/24 11:43:32 [TRACE] dag/walk: visiting "var.region"
+2020/12/24 11:43:32 [TRACE] vertex "var.ssh_key_name": starting visit (*terraform.NodeRootVariable)
+2020/12/24 11:43:32 [TRACE] dag/walk: visiting "var.private_key_path"
+2020/12/24 11:43:32 [TRACE] dag/walk: visiting "var.subnet1_cidr"
+2020/12/24 11:43:32 [TRACE] vertex "var.private_key_path": starting visit (*terraform.NodeRootVariable)
+2020/12/24 11:43:32 [TRACE] vertex "var.region": starting visit (*terraform.NodeRootVariable)
+2020/12/24 11:43:32 [TRACE] dag/walk: visiting "var.subnet2_cidr"
+2020/12/24 11:43:32 [TRACE] vertex "var.region": visit complete
+2020/12/24 11:43:32 [TRACE] vertex "var.ssh_key_name": visit complete
+2020/12/24 11:43:32 [TRACE] dag/walk: visiting "var.aws_secret_key"
+2020/12/24 11:43:32 [TRACE] dag/walk: visiting "var.vpc_cidr"
+2020/12/24 11:43:32 [TRACE] vertex "var.vpc_cidr": starting visit (*terraform.NodeRootVariable)
+2020/12/24 11:43:32 [TRACE] vertex "var.vpc_cidr": visit complete
+2020/12/24 11:43:32 [TRACE] vertex "var.aws_secret_key": starting visit (*terraform.NodeRootVariable)
+2020/12/24 11:43:32 [TRACE] vertex "var.aws_secret_key": visit complete
+2020/12/24 11:43:32 [TRACE] dag/walk: visiting "output.instance-dns"
+2020/12/24 11:43:32 [TRACE] vertex "output.instance-dns": starting visit (*terraform.NodeApplyableOutput)
+2020/12/24 11:43:32 [TRACE] dag/walk: visiting "var.aws_access_key"
+2020/12/24 11:43:32 [TRACE] vertex "var.aws_access_key": starting visit (*terraform.NodeRootVariable)
+2020/12/24 11:43:32 [TRACE] vertex "var.aws_access_key": visit complete
+2020/12/24 11:43:32 [TRACE] vertex "var.private_key_path": visit complete
+2020/12/24 11:43:32 [TRACE] vertex "var.subnet1_cidr": starting visit (*terraform.NodeRootVariable)
+2020/12/24 11:43:32 [TRACE] vertex "var.subnet1_cidr": visit complete
+2020/12/24 11:43:32 [TRACE] vertex "var.subnet2_cidr": starting visit (*terraform.NodeRootVariable)
+2020/12/24 11:43:32 [TRACE] vertex "var.subnet2_cidr": visit complete
+2020/12/24 11:43:32 [TRACE] dag/walk: visiting "provider[\"registry.terraform.io/hashicorp/aws\"]"
+2020/12/24 11:43:32 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/aws\"]": starting visit (*terraform.NodeApplyableProvider)
+2020/12/24 11:43:32 [TRACE] ExecuteWriteOutput: Saving NoOp change for output.instance-dns in changeset
+2020/12/24 11:43:32 [TRACE] EvalWriteOutput: Saving value for output.instance-dns in state
+2020/12/24 11:43:32 [TRACE] vertex "output.instance-dns": visit complete
+2020-12-24T11:43:32.286+1100 [INFO]  plugin: configuring client automatic mTLS
+2020-12-24T11:43:32.309+1100 [DEBUG] plugin: starting plugin: path=.terraform/providers/registry.terraform.io/hashicorp/aws/3.22.0/darwin_amd64/terraform-provider-aws_v3.22.0_x5 args=[.terraform/providers/registry.terraform.io/hashicorp/aws/3.22.0/darwin_amd64/terraform-provider-aws_v3.22.0_x5]
+2020-12-24T11:43:32.323+1100 [DEBUG] plugin: plugin started: path=.terraform/providers/registry.terraform.io/hashicorp/aws/3.22.0/darwin_amd64/terraform-provider-aws_v3.22.0_x5 pid=12017
+2020-12-24T11:43:32.323+1100 [DEBUG] plugin: waiting for RPC address: path=.terraform/providers/registry.terraform.io/hashicorp/aws/3.22.0/darwin_amd64/terraform-provider-aws_v3.22.0_x5
+2020-12-24T11:43:32.359+1100 [INFO]  plugin.terraform-provider-aws_v3.22.0_x5: configuring server automatic mTLS: timestamp=2020-12-24T11:43:32.359+1100
+2020-12-24T11:43:32.387+1100 [DEBUG] plugin: using plugin: version=5
+2020-12-24T11:43:32.387+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: plugin address: address=/var/folders/04/5p5mg0ys1816j1wb7bprllz80000gn/T/plugin427758652 network=unix timestamp=2020-12-24T11:43:32.387+1100
+2020/12/24 11:43:32 [TRACE] BuiltinEvalContext: Initialized "provider[\"registry.terraform.io/hashicorp/aws\"]" provider for provider["registry.terraform.io/hashicorp/aws"]
+2020-12-24T11:43:32.438+1100 [TRACE] plugin.stdio: waiting for stdio data
+2020/12/24 11:43:32 [TRACE] buildProviderConfig for provider["registry.terraform.io/hashicorp/aws"]: using explicit config only
+2020/12/24 11:43:32 [TRACE] GRPCProvider: GetSchema
+2020/12/24 11:43:32 [TRACE] GRPCProvider: Configure
+2020-12-24T11:43:32.514+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:43:32 [INFO] AWS Auth provider used: "StaticProvider"
+2020-12-24T11:43:32.514+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:43:32 [DEBUG] Trying to get account information via sts:GetCallerIdentity
+2020-12-24T11:43:34.149+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:43:34 [DEBUG] Trying to get account information via sts:GetCallerIdentity
+2020/12/24 11:43:35 [TRACE] vertex "provider[\"registry.terraform.io/hashicorp/aws\"]": visit complete
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_eip.nat (expand)"
+2020/12/24 11:43:35 [TRACE] vertex "aws_eip.nat (expand)": starting visit (*terraform.nodeExpandApplyableResource)
+2020/12/24 11:43:35 [TRACE] vertex "aws_eip.nat (expand)": expanding dynamic subgraph
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_vpc.vpc1 (expand)"
+2020/12/24 11:43:35 [TRACE] vertex "aws_eip.nat (expand)": entering dynamic subgraph
+2020/12/24 11:43:35 [TRACE] vertex "aws_vpc.vpc1 (expand)": starting visit (*terraform.nodeExpandApplyableResource)
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_route_table_association.route-subnet2 (expand)"
+2020/12/24 11:43:35 [TRACE] vertex "aws_vpc.vpc1 (expand)": expanding dynamic subgraph
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table_association.route-subnet2 (expand)": starting visit (*terraform.nodeExpandApplyableResource)
+2020/12/24 11:43:35 [TRACE] vertex "aws_vpc.vpc1 (expand)": entering dynamic subgraph
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table_association.route-subnet2 (expand)": expanding dynamic subgraph
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_subnet.private_subnet1 (expand)"
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_vpc.vpc1"
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table_association.route-subnet2 (expand)": entering dynamic subgraph
+2020/12/24 11:43:35 [TRACE] vertex "aws_vpc.vpc1": starting visit (*terraform.NodeApplyableResource)
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_network_interface.multi-ip (expand)"
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.private_subnet1 (expand)": starting visit (*terraform.nodeExpandApplyableResource)
+2020/12/24 11:43:35 [TRACE] vertex "aws_network_interface.multi-ip (expand)": starting visit (*terraform.nodeExpandApplyableResource)
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_route_table.route_table2 (expand)"
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_route_table_association.route-subnet2"
+2020/12/24 11:43:35 [TRACE] vertex "aws_network_interface.multi-ip (expand)": expanding dynamic subgraph
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.private_subnet1 (expand)": expanding dynamic subgraph
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table.route_table2 (expand)": starting visit (*terraform.nodeExpandApplyableResource)
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table_association.route-subnet2": starting visit (*terraform.NodeApplyableResource)
+2020/12/24 11:43:35 [TRACE] vertex "aws_network_interface.multi-ip (expand)": entering dynamic subgraph
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_nat_gateway.nat_gw (expand)"
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table.route_table2 (expand)": expanding dynamic subgraph
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.private_subnet1 (expand)": entering dynamic subgraph
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_subnet.public_subnet1 (expand)"
+2020/12/24 11:43:35 [TRACE] vertex "aws_nat_gateway.nat_gw (expand)": starting visit (*terraform.nodeExpandApplyableResource)
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_network_interface.multi-ip"
+2020/12/24 11:43:35 [TRACE] vertex "aws_network_interface.multi-ip": starting visit (*terraform.NodeApplyableResource)
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.public_subnet1 (expand)": starting visit (*terraform.nodeExpandApplyableResource)
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_subnet.private_subnet1"
+2020/12/24 11:43:35 [TRACE] vertex "aws_vpc.vpc1": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.public_subnet1 (expand)": expanding dynamic subgraph
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table.route_table2 (expand)": entering dynamic subgraph
+2020/12/24 11:43:35 [TRACE] vertex "aws_network_interface.multi-ip": visit complete
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_route_table.route_table2"
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.public_subnet1 (expand)": entering dynamic subgraph
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table_association.route-subnet2": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_network_interface.multi-ip (expand)": dynamic subgraph completed successfully
+2020/12/24 11:43:35 [TRACE] vertex "aws_nat_gateway.nat_gw (expand)": expanding dynamic subgraph
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table_association.route-subnet2 (expand)": dynamic subgraph completed successfully
+2020/12/24 11:43:35 [TRACE] vertex "aws_nat_gateway.nat_gw (expand)": entering dynamic subgraph
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.private_subnet1": starting visit (*terraform.NodeApplyableResource)
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_nat_gateway.nat_gw"
+2020/12/24 11:43:35 [TRACE] vertex "aws_nat_gateway.nat_gw": starting visit (*terraform.NodeApplyableResource)
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.private_subnet1": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table_association.route-subnet2 (expand)": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_nat_gateway.nat_gw": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.private_subnet1 (expand)": dynamic subgraph completed successfully
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.private_subnet1 (expand)": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_nat_gateway.nat_gw (expand)": dynamic subgraph completed successfully
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_eip.nat"
+2020/12/24 11:43:35 [TRACE] vertex "aws_nat_gateway.nat_gw (expand)": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table.route_table2": starting visit (*terraform.NodeApplyableResource)
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table.route_table2": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_eip.nat": starting visit (*terraform.NodeApplyableResource)
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table.route_table2 (expand)": dynamic subgraph completed successfully
+2020/12/24 11:43:35 [TRACE] vertex "aws_route_table.route_table2 (expand)": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_network_interface.multi-ip (expand)": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_vpc.vpc1 (expand)": dynamic subgraph completed successfully
+2020/12/24 11:43:35 [TRACE] vertex "aws_vpc.vpc1 (expand)": visit complete
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_subnet.public_subnet1"
+2020/12/24 11:43:35 [TRACE] vertex "aws_eip.nat": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.public_subnet1": starting visit (*terraform.NodeApplyableResource)
+2020/12/24 11:43:35 [TRACE] vertex "aws_eip.nat (expand)": dynamic subgraph completed successfully
+2020/12/24 11:43:35 [TRACE] vertex "aws_eip.nat (expand)": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.public_subnet1": visit complete
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.public_subnet1 (expand)": dynamic subgraph completed successfully
+2020/12/24 11:43:35 [TRACE] vertex "aws_subnet.public_subnet1 (expand)": visit complete
+2020/12/24 11:43:35 [TRACE] dag/walk: visiting "aws_network_interface.multi-ip"
+2020/12/24 11:43:35 [TRACE] vertex "aws_network_interface.multi-ip": starting visit (*terraform.NodeApplyableResourceInstance)
+2020/12/24 11:43:35 [TRACE] EvalReadDiff: Read Create change from plan for aws_network_interface.multi-ip
+2020/12/24 11:43:35 [TRACE] EvalReadState: reading state for aws_network_interface.multi-ip
+2020/12/24 11:43:35 [TRACE] EvalReadState: no state present for aws_network_interface.multi-ip
+2020/12/24 11:43:35 [TRACE] EvalReadDiff: Read Create change from plan for aws_network_interface.multi-ip
+2020/12/24 11:43:35 [TRACE] Re-validating config for "aws_network_interface.multi-ip"
+2020/12/24 11:43:35 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020-12-24T11:43:35.567+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:43:35 [WARN] Truncating attribute path of 0 diagnostics for TypeSet
+2020/12/24 11:43:35 [TRACE] GRPCProvider: PlanResourceChange
+2020/12/24 11:43:35 [WARN] Provider "registry.terraform.io/hashicorp/aws" produced an invalid plan for aws_network_interface.multi-ip, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .source_dest_check: planned value cty.True does not match config value cty.NullVal(cty.Bool)
+      - .attachment: attribute representing nested block must not be unknown itself; set nested attribute values to unknown instead
+2020/12/24 11:43:35 [TRACE] EvalCheckPlannedChange: Verifying that actual change (action Create) matches planned change (action Create)
+2020/12/24 11:43:35 [TRACE] EvalReadState: reading state for aws_network_interface.multi-ip
+2020/12/24 11:43:35 [TRACE] EvalReadState: no state present for aws_network_interface.multi-ip
+2020/12/24 11:43:35 [DEBUG] EvalApply: ProviderMeta config value set
+2020/12/24 11:43:35 [DEBUG] aws_network_interface.multi-ip: applying the planned Create change
+2020/12/24 11:43:35 [TRACE] GRPCProvider: ApplyResourceChange
+2020-12-24T11:43:35.573+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:43:35 [DEBUG] setting computed for "attachment" from ComputedKeys
+2020-12-24T11:43:35.573+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:43:35 [DEBUG] setting computed for "security_groups" from ComputedKeys
+2020-12-24T11:43:35.573+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:43:35 [DEBUG] setting computed for "ipv6_addresses" from ComputedKeys
+2020-12-24T11:43:35.573+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:43:35 [DEBUG] Creating network interface
+2020-12-24T11:43:35.901+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:43:35 [DEBUG] Waiting for state to become: [available]
+2020/12/24 11:43:37 [TRACE] dag/walk: vertex "aws_nat_gateway.nat_gw" is waiting for "aws_eip.nat"
+2020/12/24 11:43:37 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:43:37 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:43:37 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:43:37 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:43:40 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:43:40 [TRACE] dag/walk: vertex "aws_eip.nat" is waiting for "aws_network_interface.multi-ip"
+2020/12/24 11:43:42 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:43:42 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:43:42 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:43:42 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:43:42 [TRACE] dag/walk: vertex "aws_nat_gateway.nat_gw" is waiting for "aws_eip.nat"
+2020/12/24 11:43:45 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:43:45 [TRACE] dag/walk: vertex "aws_eip.nat" is waiting for "aws_network_interface.multi-ip"
+2020/12/24 11:43:47 [TRACE] dag/walk: vertex "aws_nat_gateway.nat_gw" is waiting for "aws_eip.nat"
+2020/12/24 11:43:47 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:43:47 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:43:47 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:43:47 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:43:50 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:43:50 [TRACE] dag/walk: vertex "aws_eip.nat" is waiting for "aws_network_interface.multi-ip"
+2020/12/24 11:43:52 [TRACE] dag/walk: vertex "aws_nat_gateway.nat_gw" is waiting for "aws_eip.nat"
+2020/12/24 11:43:52 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:43:52 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:43:52 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:43:52 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:43:55 [TRACE] dag/walk: vertex "aws_eip.nat" is waiting for "aws_network_interface.multi-ip"
+2020/12/24 11:43:55 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:43:57 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:43:57 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:43:57 [TRACE] dag/walk: vertex "aws_nat_gateway.nat_gw" is waiting for "aws_eip.nat"
+2020/12/24 11:43:57 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:43:57 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:00 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:44:00 [TRACE] dag/walk: vertex "aws_eip.nat" is waiting for "aws_network_interface.multi-ip"
+2020/12/24 11:44:02 [TRACE] dag/walk: vertex "aws_nat_gateway.nat_gw" is waiting for "aws_eip.nat"
+2020/12/24 11:44:02 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:44:02 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:02 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:44:02 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:05 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:44:05 [TRACE] dag/walk: vertex "aws_eip.nat" is waiting for "aws_network_interface.multi-ip"
+2020/12/24 11:44:06 [WARN] Provider "registry.terraform.io/hashicorp/aws" produced an unexpected new value for aws_network_interface.multi-ip, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .description: was null, but now cty.StringVal("")
+2020/12/24 11:44:06 [TRACE] EvalWriteState: recording 1 dependencies for aws_network_interface.multi-ip
+2020/12/24 11:44:06 [TRACE] EvalWriteState: writing current state object for aws_network_interface.multi-ip
+2020/12/24 11:44:06 [TRACE] EvalWriteState: recording 1 dependencies for aws_network_interface.multi-ip
+2020/12/24 11:44:06 [TRACE] EvalWriteState: writing current state object for aws_network_interface.multi-ip
+2020/12/24 11:44:06 [TRACE] statemgr.Filesystem: creating backup snapshot at terraform.tfstate.backup
+2020/12/24 11:44:06 [TRACE] statemgr.Filesystem: state has changed since last snapshot, so incrementing serial to 10
+2020/12/24 11:44:06 [TRACE] statemgr.Filesystem: writing snapshot at terraform.tfstate
+2020/12/24 11:44:06 [TRACE] vertex "aws_network_interface.multi-ip": visit complete
+2020/12/24 11:44:06 [TRACE] dag/walk: visiting "aws_eip.nat"
+2020/12/24 11:44:06 [TRACE] vertex "aws_eip.nat": starting visit (*terraform.NodeApplyableResourceInstance)
+2020/12/24 11:44:06 [TRACE] EvalReadDiff: Read Create change from plan for aws_eip.nat
+2020/12/24 11:44:06 [TRACE] EvalReadState: reading state for aws_eip.nat
+2020/12/24 11:44:06 [TRACE] EvalReadState: no state present for aws_eip.nat
+2020/12/24 11:44:06 [TRACE] EvalReadDiff: Read Create change from plan for aws_eip.nat
+2020/12/24 11:44:06 [TRACE] Re-validating config for "aws_eip.nat"
+2020/12/24 11:44:06 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/12/24 11:44:06 [TRACE] GRPCProvider: PlanResourceChange
+2020/12/24 11:44:06 [TRACE] EvalCheckPlannedChange: Verifying that actual change (action Create) matches planned change (action Create)
+2020/12/24 11:44:06 [TRACE] EvalReadState: reading state for aws_eip.nat
+2020/12/24 11:44:06 [TRACE] EvalReadState: no state present for aws_eip.nat
+2020/12/24 11:44:06 [DEBUG] EvalApply: ProviderMeta config value set
+2020/12/24 11:44:06 [DEBUG] aws_eip.nat: applying the planned Create change
+2020/12/24 11:44:06 [TRACE] GRPCProvider: ApplyResourceChange
+2020-12-24T11:44:06.373+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:06 [DEBUG] EIP create configuration: {
+2020-12-24T11:44:06.373+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   Domain: "vpc"
+2020-12-24T11:44:06.373+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: }
+2020-12-24T11:44:06.694+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:06 [DEBUG] EIP Allocate: {
+2020-12-24T11:44:06.694+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   AllocationId: "eipalloc-0c44a0f55368cff73",
+2020-12-24T11:44:06.694+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   Domain: "vpc",
+2020-12-24T11:44:06.694+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   NetworkBorderGroup: "ap-southeast-2",
+2020-12-24T11:44:06.694+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   PublicIp: "54.79.148.20",
+2020-12-24T11:44:06.694+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   PublicIpv4Pool: "amazon"
+2020-12-24T11:44:06.694+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: }
+2020-12-24T11:44:06.694+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:06 [INFO] EIP ID: eipalloc-0c44a0f55368cff73 (domain: vpc)
+2020-12-24T11:44:06.695+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:06 [DEBUG] EIP associate configuration: {
+2020-12-24T11:44:06.695+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   AllocationId: "eipalloc-0c44a0f55368cff73",
+2020-12-24T11:44:06.695+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   InstanceId: "",
+2020-12-24T11:44:06.695+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   NetworkInterfaceId: "eni-017c12e2582175c43",
+2020-12-24T11:44:06.695+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   PrivateIpAddress: "172.16.0.4"
+2020-12-24T11:44:06.695+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: } (domain: vpc)
+2020-12-24T11:44:06.695+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:06 [DEBUG] Waiting for state to become: [success]
+2020/12/24 11:44:07 [TRACE] dag/walk: vertex "aws_nat_gateway.nat_gw" is waiting for "aws_eip.nat"
+2020/12/24 11:44:07 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:44:07 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:07 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:07 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020-12-24T11:44:07.345+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:07 [DEBUG] EIP describe configuration: {
+2020-12-24T11:44:07.345+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   AllocationIds: ["eipalloc-0c44a0f55368cff73"]
+2020-12-24T11:44:07.345+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: } (domain: vpc)
+2020-12-24T11:44:07.345+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:07 [DEBUG] Waiting for state to become: [success]
+2020/12/24 11:44:07 [WARN] Provider "registry.terraform.io/hashicorp/aws" produced an unexpected new value for aws_eip.nat, but we are tolerating it because it is using the legacy plugin SDK.
+    The following problems may be the cause of any confusing errors from downstream operations:
+      - .customer_owned_ipv4_pool: was null, but now cty.StringVal("")
+2020/12/24 11:44:07 [TRACE] EvalWriteState: recording 2 dependencies for aws_eip.nat
+2020/12/24 11:44:07 [TRACE] EvalWriteState: writing current state object for aws_eip.nat
+2020/12/24 11:44:07 [TRACE] EvalWriteState: recording 2 dependencies for aws_eip.nat
+2020/12/24 11:44:07 [TRACE] EvalWriteState: writing current state object for aws_eip.nat
+2020/12/24 11:44:07 [TRACE] statemgr.Filesystem: have already backed up original terraform.tfstate to terraform.tfstate.backup on a previous write
+2020/12/24 11:44:07 [TRACE] statemgr.Filesystem: state has changed since last snapshot, so incrementing serial to 11
+2020/12/24 11:44:07 [TRACE] statemgr.Filesystem: writing snapshot at terraform.tfstate
+2020/12/24 11:44:07 [TRACE] vertex "aws_eip.nat": visit complete
+2020/12/24 11:44:07 [TRACE] dag/walk: visiting "aws_nat_gateway.nat_gw"
+2020/12/24 11:44:07 [TRACE] vertex "aws_nat_gateway.nat_gw": starting visit (*terraform.NodeApplyableResourceInstance)
+2020/12/24 11:44:07 [TRACE] EvalReadDiff: Read Create change from plan for aws_nat_gateway.nat_gw
+2020/12/24 11:44:07 [TRACE] EvalReadState: reading state for aws_nat_gateway.nat_gw
+2020/12/24 11:44:07 [TRACE] EvalReadState: no state present for aws_nat_gateway.nat_gw
+2020/12/24 11:44:07 [TRACE] EvalReadDiff: Read Create change from plan for aws_nat_gateway.nat_gw
+2020/12/24 11:44:07 [TRACE] Re-validating config for "aws_nat_gateway.nat_gw"
+2020/12/24 11:44:07 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/12/24 11:44:07 [TRACE] GRPCProvider: PlanResourceChange
+2020/12/24 11:44:07 [TRACE] EvalCheckPlannedChange: Verifying that actual change (action Create) matches planned change (action Create)
+2020/12/24 11:44:07 [TRACE] EvalReadState: reading state for aws_nat_gateway.nat_gw
+2020/12/24 11:44:07 [TRACE] EvalReadState: no state present for aws_nat_gateway.nat_gw
+2020/12/24 11:44:07 [DEBUG] EvalApply: ProviderMeta config value set
+2020/12/24 11:44:07 [DEBUG] aws_nat_gateway.nat_gw: applying the planned Create change
+2020/12/24 11:44:07 [TRACE] GRPCProvider: ApplyResourceChange
+2020-12-24T11:44:07.635+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:07 [DEBUG] Create NAT Gateway: {
+2020-12-24T11:44:07.635+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   AllocationId: "eipalloc-0c44a0f55368cff73",
+2020-12-24T11:44:07.635+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5:   SubnetId: "subnet-0693fdc03be8360e0"
+2020-12-24T11:44:07.635+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: }
+2020-12-24T11:44:08.063+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:08 [INFO] NAT Gateway ID: nat-0b97e469cfe768368
+2020-12-24T11:44:08.063+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:08 [DEBUG] Waiting for NAT Gateway (nat-0b97e469cfe768368) to become available
+2020-12-24T11:44:08.063+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:08 [DEBUG] Waiting for state to become: [available]
+2020-12-24T11:44:08.243+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:08 [TRACE] Waiting 200ms before next try
+2020-12-24T11:44:08.631+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:08 [TRACE] Waiting 400ms before next try
+2020-12-24T11:44:09.226+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:09 [TRACE] Waiting 800ms before next try
+2020-12-24T11:44:10.234+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:10 [TRACE] Waiting 1.6s before next try
+2020/12/24 11:44:10 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020-12-24T11:44:12.025+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:12 [TRACE] Waiting 3.2s before next try
+2020/12/24 11:44:12 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:12 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:12 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:44:12 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020-12-24T11:44:15.421+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:15 [TRACE] Waiting 6.4s before next try
+2020/12/24 11:44:15 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:44:17 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:17 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:44:17 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:44:17 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:20 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020-12-24T11:44:22.093+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:22 [TRACE] Waiting 10s before next try
+2020/12/24 11:44:22 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:44:22 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:22 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:22 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:44:25 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:44:27 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:44:27 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:27 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:44:27 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:30 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020-12-24T11:44:32.296+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:32 [TRACE] Waiting 10s before next try
+2020/12/24 11:44:32 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:32 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:44:32 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:32 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:44:35 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:44:37 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:44:37 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:37 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:37 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:44:40 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:44:42 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:42 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:42 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:44:42 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020-12-24T11:44:42.479+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:42 [TRACE] Waiting 10s before next try
+2020/12/24 11:44:45 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:44:47 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:44:47 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:44:47 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:47 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:50 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:44:52 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:52 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:52 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:44:52 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020-12-24T11:44:52.723+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:44:52 [TRACE] Waiting 10s before next try
+2020/12/24 11:44:55 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:44:57 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:57 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:44:57 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:44:57 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:45:00 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:45:02 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:45:02 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:45:02 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:45:02 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020-12-24T11:45:02.920+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 2020/12/24 11:45:02 [TRACE] Waiting 10s before next try
+2020/12/24 11:45:05 [TRACE] dag/walk: vertex "aws_route_table.route_table2" is waiting for "aws_nat_gateway.nat_gw"
+2020/12/24 11:45:07 [TRACE] dag/walk: vertex "meta.count-boundary (EachMode fixup)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:45:07 [TRACE] dag/walk: vertex "aws_route_table_association.route-subnet2" is waiting for "aws_route_table.route_table2"
+2020/12/24 11:45:07 [TRACE] dag/walk: vertex "root" is waiting for "provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+2020/12/24 11:45:07 [TRACE] dag/walk: vertex "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" is waiting for "aws_route_table_association.route-subnet2"
+2020/12/24 11:45:09 [TRACE] backend/local: waiting for the running operation to stop
+2020/12/24 11:45:09 [WARN] terraform: Stop called, initiating interrupt sequence
+2020/12/24 11:45:09 [WARN] terraform: run context exists, stopping
+2020/12/24 11:45:09 [INFO] terraform: waiting for graceful stop to complete
+2020/12/24 11:45:09 [TRACE] Context: requesting providers and provisioners to gracefully stop
+2020/12/24 11:45:09 [TRACE] GRPCProvider: Stop
+2020-12-24T11:45:09.761+1100 [TRACE] plugin.terraform-provider-aws_v3.22.0_x5: plugin received interrupt signal, ignoring: count=1 timestamp=2020-12-24T11:45:09.759+1100
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: panic: close of nil channel
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: goroutine 140 [running]:
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: github.com/hashicorp/terraform-plugin-go/tfprotov5/server.(*server).stop(0xc0006b9920)
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.1.0/tfprotov5/server/server.go:201 +0x71
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: github.com/hashicorp/terraform-plugin-go/tfprotov5/server.(*server).Stop(0xc0006b9920, 0x7e27e40, 0xc001533bc0, 0xc001533bf0, 0xc0006b9920, 0xc001533bc0, 0xc00128dba0)
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.1.0/tfprotov5/server/server.go:215 +0xa5
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: github.com/hashicorp/terraform-plugin-go/tfprotov5/internal/tfplugin5._Provider_Stop_Handler(0x71da3e0, 0xc0006b9920, 0x7e27e40, 0xc001533bc0, 0xc00154db60, 0x0, 0x7e27e40, 0xc001533bc0, 0x0, 0x0)
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.1.0/tfprotov5/internal/tfplugin5/tfplugin5_grpc.pb.go:434 +0x214
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: google.golang.org/grpc.(*Server).processUnaryRPC(0xc0000aefc0, 0x7e4b620, 0xc00033a600, 0xc001024800, 0xc000fee7e0, 0xb2315c8, 0x0, 0x0, 0x0)
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/pkg/mod/google.golang.org/grpc@v1.32.0/server.go:1194 +0x522
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: google.golang.org/grpc.(*Server).handleStream(0xc0000aefc0, 0x7e4b620, 0xc00033a600, 0xc001024800, 0x0)
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/pkg/mod/google.golang.org/grpc@v1.32.0/server.go:1517 +0xd05
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: google.golang.org/grpc.(*Server).serveStreams.func1.2(0xc0005e8cd0, 0xc0000aefc0, 0x7e4b620, 0xc00033a600, 0xc001024800)
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/pkg/mod/google.golang.org/grpc@v1.32.0/server.go:859 +0xa5
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: created by google.golang.org/grpc.(*Server).serveStreams.func1
+2020-12-24T11:45:09.765+1100 [DEBUG] plugin.terraform-provider-aws_v3.22.0_x5: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/pkg/mod/google.golang.org/grpc@v1.32.0/server.go:857 +0x1fd
+2020-12-24T11:45:09.773+1100 [WARN]  plugin.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = transport is closing"
+2020-12-24T11:45:09.773+1100 [DEBUG] plugin: plugin process exited: path=.terraform/providers/registry.terraform.io/hashicorp/aws/3.22.0/darwin_amd64/terraform-provider-aws_v3.22.0_x5 pid=12017 error="exit status 2"
+2020/12/24 11:45:09 [DEBUG] aws_nat_gateway.nat_gw: apply errored, but we're indicating that via the Error pointer rather than returning it: rpc error: code = Unavailable desc = transport is closing
+2020/12/24 11:45:09 [TRACE] EvalMaybeTainted: aws_nat_gateway.nat_gw encountered an error during creation, so it is now marked as tainted
+2020/12/24 11:45:09 [TRACE] EvalWriteState: removing state object for aws_nat_gateway.nat_gw
+2020/12/24 11:45:09 [TRACE] EvalApplyProvisioners: aws_nat_gateway.nat_gw has no state, so skipping provisioners
+2020/12/24 11:45:09 [TRACE] EvalMaybeTainted: aws_nat_gateway.nat_gw encountered an error during creation, so it is now marked as tainted
+2020/12/24 11:45:09 [TRACE] EvalWriteState: removing state object for aws_nat_gateway.nat_gw
+2020/12/24 11:45:09 [WARN] Early exit triggered by hook: *terraform.stopHook
+2020/12/24 11:45:09 [TRACE] vertex "aws_nat_gateway.nat_gw": visit complete
+2020/12/24 11:45:09 [TRACE] dag/walk: visiting "aws_route_table.route_table2"
+2020/12/24 11:45:09 [TRACE] vertex "aws_route_table.route_table2": starting visit (*terraform.NodeApplyableResourceInstance)
+2020/12/24 11:45:09 [TRACE] EvalReadDiff: Read Create change from plan for aws_route_table.route_table2
+2020/12/24 11:45:09 [TRACE] EvalReadState: reading state for aws_route_table.route_table2
+2020/12/24 11:45:09 [TRACE] EvalReadState: no state present for aws_route_table.route_table2
+2020/12/24 11:45:09 [TRACE] EvalReadDiff: Read Create change from plan for aws_route_table.route_table2
+2020/12/24 11:45:09 [ERROR] unknown instance "aws_nat_gateway.nat_gw" referenced during plan
+2020/12/24 11:45:09 [TRACE] Re-validating config for "aws_route_table.route_table2"
+2020/12/24 11:45:09 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2020/12/24 11:45:09 [TRACE] vertex "aws_route_table.route_table2": visit complete
+2020/12/24 11:45:09 [TRACE] dag/walk: upstream of "aws_route_table_association.route-subnet2" errored, so skipping
+2020/12/24 11:45:09 [TRACE] dag/walk: upstream of "meta.count-boundary (EachMode fixup)" errored, so skipping
+2020/12/24 11:45:09 [TRACE] dag/walk: upstream of "provider[\"registry.terraform.io/hashicorp/aws\"] (close)" errored, so skipping
+2020/12/24 11:45:09 [TRACE] dag/walk: upstream of "root" errored, so skipping
+2020/12/24 11:45:09 [TRACE] backend/local: graceful stop has completed
+2020/12/24 11:45:09 [TRACE] statemgr.Filesystem: have already backed up original terraform.tfstate to terraform.tfstate.backup on a previous write
+2020/12/24 11:45:09 [WARN] terraform: stop complete
+2020/12/24 11:45:09 [TRACE] statemgr.Filesystem: state has changed since last snapshot, so incrementing serial to 12
+2020/12/24 11:45:09 [TRACE] statemgr.Filesystem: writing snapshot at terraform.tfstate
+2020/12/24 11:45:09 [TRACE] statemgr.Filesystem: removing lock metadata file .terraform.tfstate.lock.info
+2020/12/24 11:45:09 [TRACE] statemgr.Filesystem: unlocking terraform.tfstate using fcntl flock
+2020-12-24T11:45:09.805+1100 [DEBUG] plugin: plugin exited
