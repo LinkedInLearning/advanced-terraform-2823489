@@ -18,48 +18,48 @@ variable "subnet1_cidr" {
 }
 
 variable "environment_list" {
-  type = list(string)
-  default = ["DEV","QA","STAGE","PROD"]
+  type    = list(string)
+  default = ["DEV", "QA", "STAGE", "PROD"]
 }
 
 variable "environment_map" {
   type = map(string)
   default = {
-    "DEV" = "DEV",
-    "QA" = "QA",
+    "DEV"   = "DEV",
+    "QA"    = "QA",
     "STAGE" = "STAGE",
-    "PROD" = "PROD"
+    "PROD"  = "PROD"
   }
 }
 
 variable "environment_instance_type" {
   type = map(string)
   default = {
-    "DEV" = "t2.micro",
-    "QA" = "t2.micro",
+    "DEV"   = "t2.micro",
+    "QA"    = "t2.micro",
     "STAGE" = "t2.micro",
-    "PROD" = "t2.micro"
+    "PROD"  = "t2.micro"
   }
 }
 
 variable "environment_instance_settings" {
-  type = map(object({instance_type=string, monitoring=bool}))
+  type = map(object({ instance_type = string, monitoring = bool }))
   default = {
     "DEV" = {
-      instance_type = "t2.micro", 
-      monitoring = false
+      instance_type = "t2.micro",
+      monitoring    = false
     },
-   "QA" = {
-      instance_type = "t2.micro", 
-      monitoring = false
+    "QA" = {
+      instance_type = "t2.micro",
+      monitoring    = false
     },
     "STAGE" = {
-      instance_type = "t2.micro", 
-      monitoring = false
+      instance_type = "t2.micro",
+      monitoring    = false
     },
     "PROD" = {
-      instance_type = "t2.micro", 
-      monitoring = true
+      instance_type = "t2.micro",
+      monitoring    = true
     }
   }
 }
@@ -79,16 +79,16 @@ provider "aws" {
 
 # VPC
 resource "aws_vpc" "vpc1" {
-  cidr_block = var.vpc_cidr
+  cidr_block           = var.vpc_cidr
   enable_dns_hostnames = "true"
 }
 
 # SUBNET
 resource "aws_subnet" "subnet1" {
-  cidr_block = var.subnet1_cidr
-  vpc_id = aws_vpc.vpc1.id
+  cidr_block              = var.subnet1_cidr
+  vpc_id                  = aws_vpc.vpc1.id
   map_public_ip_on_launch = "true"
-  availability_zone = data.aws_availability_zones.available.names[1]
+  availability_zone       = data.aws_availability_zones.available.names[1]
 }
 
 # INTERNET_GATEWAY
@@ -107,48 +107,48 @@ resource "aws_route_table" "route_table1" {
 }
 
 resource "aws_route_table_association" "route-subnet1" {
-  subnet_id = aws_subnet.subnet1.id
+  subnet_id      = aws_subnet.subnet1.id
   route_table_id = aws_route_table.route_table1.id
 }
 
 # SECURITY_GROUP
 resource "aws_security_group" "sg-nodejs-instance" {
-  name = "nodejs_sg"
+  name   = "nodejs_sg"
   vpc_id = aws_vpc.vpc1.id
 
   ingress {
-    from_port = 80
-    to_port = 80
-    protocol = "tcp"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   egress {
-    from_port = 0
-    to_port = 0
-    protocol = "-1"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
 # INSTANCE
 resource "aws_instance" "nodejs1" {
-  ami = data.aws_ami.aws-linux.id
+  ami           = data.aws_ami.aws-linux.id
   instance_type = var.environment_instance_type["DEV"]
   //instance_type = var.environment_instance_settings["PROD"].instance_type
-  subnet_id = aws_subnet.subnet1.id
+  subnet_id              = aws_subnet.subnet1.id
   vpc_security_group_ids = [aws_security_group.sg-nodejs-instance.id]
 
   monitoring = var.environment_instance_settings["PROD"].monitoring
 
-  tags = {Environment = var.environment_list[0]}
+  tags = { Environment = var.environment_list[0] }
 
 }
 
@@ -182,4 +182,7 @@ data "aws_ami" "aws-linux" {
 # //////////////////////////////
 output "instance-dns" {
   value = aws_instance.nodejs1.public_dns
+}
+output "private-dns" {
+  value = aws_instance.nodejs1.private_dns
 }

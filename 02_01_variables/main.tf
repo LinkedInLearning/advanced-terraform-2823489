@@ -64,6 +64,9 @@ variable "environment_instance_settings" {
   }
 }
 
+variable "deploy_environment" {
+  default = "DEV"
+}
 # //////////////////////////////
 # PROVIDERS
 # //////////////////////////////
