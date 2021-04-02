@@ -7,3 +7,4 @@
 *.lock.info
 .terraform
 .DS_Store
+commands.txt
