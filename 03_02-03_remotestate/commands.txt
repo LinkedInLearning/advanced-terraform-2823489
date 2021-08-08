@@ -3,5 +3,5 @@ terraform init \
     -backend-config="key=hilmaja/ecommerceapp/app.state" \
     -backend-config="region=us-east-2" \
     -backend-config="dynamodb_table=hilmaja-tfstatelock" \
-    -backend-config="access_key=AKIAVOC755WTGNBGRNWE" \
-    -backend-config="secret_key=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"
+    -backend-config="access_key=" \
+    -backend-config="secret_key="
