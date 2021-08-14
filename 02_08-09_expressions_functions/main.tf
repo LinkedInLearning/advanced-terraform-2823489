@@ -19,7 +19,7 @@ variable "subnet1_cidr" {
 
 variable "environment_list" {
   type = list(string)
-  default = ["DEV","QA","STAGE","PROD"]
+  default = ["DEV","QA","STAGE",""]
 }
 
 variable "environment_map" {
