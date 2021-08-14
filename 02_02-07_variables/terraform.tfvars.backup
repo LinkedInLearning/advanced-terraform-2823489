@@ -1,7 +1,7 @@
-aws_access_key = "AKIAT2UOGJANND75NEKF"
+aws_access_key = "F"
 
-aws_secret_key = "x2L8qUV6JBlBxm+DhaiD1myZc1T7UKV0lnNhny4P"
+aws_secret_key = ""
 
-ssh_key_name = "tf_key"
+ssh_key_name = ""
 
-private_key_path = "tf_key.pem"
+private_key_path = ""
