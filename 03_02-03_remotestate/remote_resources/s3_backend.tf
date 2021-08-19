@@ -6,7 +6,7 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
 variable "bucket_name" {
-  default = "red30817-tfstate916"
+  default = "red30817-tfstate"
 }
 
 # //////////////////////////////
@@ -28,7 +28,7 @@ data "aws_iam_user" "terraform" {
 # //////////////////////////////
 # S3 BUCKET
 # //////////////////////////////
-resource "aws_s3_bucket" "red30-tfremotestate916" {
+resource "aws_s3_bucket" "red30-tfremotestate" {
   bucket = var.bucket_name
   force_destroy = true
   acl = "private"
@@ -56,7 +56,7 @@ resource "aws_s3_bucket" "red30-tfremotestate916" {
 EOF
 }
 
-resource "aws_s3_bucket_public_access_block" "red30-tfremotestate916" {
+resource "aws_s3_bucket_public_access_block" "red30-tfremotestate" {
   bucket = aws_s3_bucket.red30-tfremotestate.id
 
   block_public_acls   = true
@@ -68,7 +68,7 @@ resource "aws_s3_bucket_public_access_block" "red30-tfremotestate916" {
 # //////////////////////////////
 # DYNAMODB TABLE
 # //////////////////////////////
-resource "aws_dynamodb_table" "tf_db_statelock916" {
+resource "aws_dynamodb_table" "tf_db_statelock" {
   name           = "red30-tfstatelock"
   read_capacity  = 20
   write_capacity = 20
