@@ -41,7 +41,7 @@ node {
         withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'aws_access_key'), 
                         string(credentialsId: 'AWS_SECRET_KEY', variable: 'aws_secret_key')]) {
                             dir('03_02-03_remotestate') {
-                                sh script: '../terraform init \
+                                sh script: '../terraform init  \
                                             -backend-config="bucket=red30-tfstate" \
                                             -backend-config="key=red30/ecommerceapp/app.state" \
                                             -backend-config="region=us-east-2" \
