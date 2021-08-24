@@ -6,7 +6,7 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
 variable "ssh_key_name" {
-  default = "terraform"
+  default = "tf_key"
 }
 
 variable "private_key_path" {}
