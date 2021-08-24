@@ -34,10 +34,10 @@ node {
                         string(credentialsId: 'AWS_SECRET_KEY', variable: 'aws_secret_key')]) {
                             dir('01_05_base') {
                                 sh script: '../terraform init  \
-                                            -backend-config="bucket=red30-tfstate" \
+                                            -backend-config="bucket=red824-tfstate" \
                                             -backend-config="key=red30/ecommerceapp/app.state" \
                                             -backend-config="region=us-east-2" \
-                                            -backend-config="dynamodb_table=red30-tfstatelock" \
+                                            -backend-config="dynamodb_table=red824-tfstatelock" \
                                             -backend-config="access_key=$aws_access_key" \
                                             -backend-config="secret_key=$aws_secret_key"'
                             }
