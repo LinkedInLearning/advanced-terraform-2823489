@@ -29,6 +29,14 @@ node {
             }
         }
     }
+    stage('Backend-Apply') {
+        withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'aws_access_key'), 
+                        string(credentialsId: 'AWS_SECRET_KEY', variable: 'aws_secret_key')]) {
+                            dir('03_02-03_remotestate/remote_resources') {
+                                sh script: '../../terraform apply backend.tfplan'
+                            }
+        }
+    }
     stage('Init') {
         withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'aws_access_key'), 
                         string(credentialsId: 'AWS_SECRET_KEY', variable: 'aws_secret_key')]) {
