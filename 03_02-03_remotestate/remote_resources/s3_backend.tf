@@ -56,7 +56,7 @@ EOF
 }
 
 resource "aws_s3_bucket_public_access_block" "red824-tfstate" {
-  bucket = aws_s3_bucket.red30-tfremotestate.id
+  bucket = aws_s3_bucket.red824-tfstate.id
 
   block_public_acls   = true
   block_public_policy = true
