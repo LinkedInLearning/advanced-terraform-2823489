@@ -3,6 +3,7 @@
 # //////////////////////////////
 terraform {
   backend "s3" {
+    default="red30-tfstate"
   }
 }
 
