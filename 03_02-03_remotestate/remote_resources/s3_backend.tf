@@ -6,7 +6,7 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
 variable "bucket_name" {
-  default = "red-tfstate"
+  default = "red824-tfstate"
 }
 
 # //////////////////////////////
@@ -28,7 +28,7 @@ data "aws_iam_user" "terraform" {
 # //////////////////////////////
 # S3 BUCKET
 # //////////////////////////////
-resource "aws_s3_bucket" "red30-tfremotestate" {
+resource "aws_s3_bucket" "red824-tfstate" {
   bucket = var.bucket_name
   force_destroy = true
   acl = "private"
