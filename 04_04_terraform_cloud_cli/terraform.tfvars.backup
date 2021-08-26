@@ -1,6 +1,6 @@
-aws_access_key = "AKIAT2UOGJANHDTSLBKS"
+aws_access_key = ""
 
-aws_secret_key = "wrqvP6xydfXjGqs4DOw3WCLSDzAC+coNwHdzwXvz"
+aws_secret_key = ""
 
 region ="us-east-2"
 
