@@ -6,7 +6,7 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
 variable "region" {
-  default = "us-east-2"
+  default = "us-east-1"
 }
 
 variable "vpc_cidr" {
@@ -19,7 +19,7 @@ variable "subnet1_cidr" {
 
 variable "environment_list" {
   type = list(string)
-  default = ["DEV","QA","STAGE","PROD"]
+  default = ["DEV","QA","STAGE",""]
 }
 
 variable "environment_map" {
