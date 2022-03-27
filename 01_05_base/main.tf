@@ -10,7 +10,7 @@ variable "ssh_key_name" {}
 variable "private_key_path" {}
 
 variable "region" {
-  default = "us-east-2"
+  default = "eu-west-2"
 }
 
 variable "vpc_cidr" {
