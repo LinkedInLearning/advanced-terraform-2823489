@@ -10,7 +10,7 @@ variable "iam_accounts" {
 }
 
 variable "region" {
-  default = "us-east-2"
+  default = "eu-west-2"
 }
 
 variable "vpc_cidr" {
@@ -142,9 +142,14 @@ resource "aws_security_group" "sg-nodejs-instance" {
   }
 }
 
+resource "aws_iam_user" "iam_users" {
+  for_each = var.iam_accounts
+  name = each.key
+}
+
 # INSTANCE
-resource "aws_instance" "nodejs1" {
-  //count = 4
+resource "aws_instance" "node_instances" {
+  count = 4
 
   ami = data.aws_ami.aws-linux.id
   instance_type = var.environment_instance_settings["PROD"].instance_type
@@ -186,5 +191,5 @@ data "aws_ami" "aws-linux" {
 # OUTPUT
 # //////////////////////////////
 output "instance-dns" {
-  value = aws_instance.nodejs1.public_dns
+  value = aws_instance.node_instances.*.public_dns
 }
