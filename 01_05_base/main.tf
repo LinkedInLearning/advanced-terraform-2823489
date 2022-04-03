@@ -10,11 +10,11 @@ variable "ssh_key_name" {}
 variable "private_key_path" {}
 
 variable "region" {
-  default = "us-east-2"
+  default = "us-east-1"
 }
 
 variable "vpc_cidr" {
-  default = "172.16.0.0/16"
+  default = "172.16.0.0/24"
 }
 
 variable "subnet1_cidr" {
@@ -35,7 +35,7 @@ provider "aws" {
 # //////////////////////////////
 
 # VPC
-resource "aws_vpc" "vpc1" {
+resource "aws_vpc" "vpc2" {
   cidr_block = var.vpc_cidr
   enable_dns_hostnames = "true"
 }
@@ -43,19 +43,19 @@ resource "aws_vpc" "vpc1" {
 # SUBNET
 resource "aws_subnet" "subnet1" {
   cidr_block = var.subnet1_cidr
-  vpc_id = aws_vpc.vpc1.id
+  vpc_id = aws_vpc.vpc2.id
   map_public_ip_on_launch = "true"
   availability_zone = data.aws_availability_zones.available.names[1]
 }
 
 # INTERNET_GATEWAY
 resource "aws_internet_gateway" "gateway1" {
-  vpc_id = aws_vpc.vpc1.id
+  vpc_id = aws_vpc.vpc2.id
 }
 
 # ROUTE_TABLE
 resource "aws_route_table" "route_table1" {
-  vpc_id = aws_vpc.vpc1.id
+  vpc_id = aws_vpc.vpc2.id
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -71,7 +71,7 @@ resource "aws_route_table_association" "route-subnet1" {
 # SECURITY_GROUP
 resource "aws_security_group" "sg-nodejs-instance" {
   name = "nodejs_sg"
-  vpc_id = aws_vpc.vpc1.id
+  vpc_id = aws_vpc.vpc2.id
 
   ingress {
     from_port = 80
@@ -113,7 +113,7 @@ resource "aws_instance" "nodejs1" {
   connection {
     type        = "ssh"
     host        = self.public_ip
-    user        = "ec2-user"
+    user        = "ec2-user" 
     private_key = file(var.private_key_path)
   }
 }
