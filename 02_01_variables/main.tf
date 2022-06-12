@@ -6,7 +6,7 @@ variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
 variable "region" {
-  default = "us-east-2"
+  default = "ca-central-1"
 }
 
 variable "vpc_cidr" {
