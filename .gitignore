@@ -5,6 +5,7 @@
 *.tfstate
 *.tfstate.backup
 *.lock.info
+*.history
 .terraform
 .DS_Store
 commands.txt
