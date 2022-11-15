@@ -10,7 +10,7 @@ variable "ssh_key_name" {}
 variable "private_key_path" {}
 
 variable "region" {
-  default = "us-east-2"
+  default = "us-east-1"
 }
 
 variable "vpc_cidr" {
@@ -150,5 +150,6 @@ data "aws_ami" "aws-linux" {
 # OUTPUT
 # //////////////////////////////
 output "instance-dns" {
+  //  ec2-18-208-149-36.compute-1.amazonaws.com
   value = aws_instance.nodejs1.public_dns
 }
