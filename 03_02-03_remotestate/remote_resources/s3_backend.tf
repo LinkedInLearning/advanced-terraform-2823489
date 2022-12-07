@@ -56,7 +56,7 @@ resource "aws_s3_bucket" "sewared30-tfremotestate" {
 EOF
 }
 
-resource "aws_s3_bucket_public_access_block" "red30-tfremotestate" {
+resource "aws_s3_bucket_public_access_block" "sewared30-tfremotestate" {
   bucket = aws_s3_bucket.red30-tfremotestate.id
 
   block_public_acls   = true
@@ -94,7 +94,7 @@ resource "aws_iam_user_policy" "terraform_user_dbtable" {
             "Effect": "Allow",
             "Action": ["dynamodb:*"],
             "Resource": [
-                "${aws_dynamodb_table.tf_db_statelock.arn}"
+                "${aws_dynamodb_table.sewatf_db_statelock.arn}"
             ]
         }
    ]
